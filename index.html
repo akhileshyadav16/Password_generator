@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passward Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-gradient-to-br from-[#111827] to-[#374151] h-screen flex flex-col justify-center items-center">
+
+        <div class="my-[15px]"><h1 class="text-white text-2xl font-bold">PASSWORD GENERATOR</h1></div>
+        <div class="w-[350px] h-[50px] flex bg-gradient-to-r from-indigo-500 to-indigo-300 rounded-lg relative">
+            <input readonly text="text" class="bg-transparent w-[300px] h-[50px] text-xl font-bold text-yellow-200 outline-none ml-[15px]" pass-display >
+            <span data-copyMsg class="tooltip "></span>
+            <button class="fa-regular fa-copy bg-transparent h-[50px] w-[30px] py-[10px] px-[5px] mt-[5px]" copy-btn></button>
+        </div>
+        <div class="flex flex-col w-[350px] bg-gradient-to-r from-indigo-500 to-indigo-400 h-[350px] my-[30px] rounded-lg">
+            <div class="flex justify-between">
+                <div class="text-white font-bold py-[10px] px-[10px] text-xl">Password Length</div>
+                <div class=" text-[#fef08a] font-bold text-xl py-[10px] px-[20px]" length-count>0</div>
+            </div>
+            <div>
+                <input type="range" min="1" max="15" step="1" class="ml-[25px] w-[300px] accent-[#404040]" value="8"  data-lengthSlider>
+            </div>
+            <div class="my-[15px] ml-[10px] ">
+                <div class="text-lg">
+                    <input first-check type="checkbox" checked id="first" class="scale-150">
+                    <label for="first" class="text-white font-semibold mx-[5px] ">Include Uppercase Letter</label>
+                </div>
+                <div class="text-lg">
+                    <input second-check type="checkbox" id="second"class="scale-150">
+                    <label for="second" class="text-white font-medium mx-[5px]">Include Lowercase Letter</label>
+                </div>
+                <div class="text-lg">
+                    <input third-check type="checkbox" id="third" class="scale-150">
+                    <label for="third" class="text-white font-semibold mx-[5px]">Include Numbers</label>
+                </div>
+                <div class="text-lg">
+                    <input forth-check type="checkbox" id="forth" class="scale-150">
+                    <label for="forth" class="text-white font-semibold mx-[5px]">Include Symbols</label>
+                </div>
+                
+            </div>
+            <div class="flex justify-between">
+                <div class="mx-[15px] text-white font-bold text-lg">Strength</div>
+                <div>
+                    <div class="rounded-full bg-white w-[20px] mr-[15px] h-[20px] my-[10px]" indicator></div>
+                </div>
+            </div>
+            <button onclick="createPassword()" generate-password class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-[280px] h-[50px] mx-auto rounded-lg font-extrabold text-black px-[5px]">
+                GENERATE PASSWORD
+            </button>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
